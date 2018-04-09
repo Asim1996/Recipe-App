@@ -7,16 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  checkRecipeRoute=false;
-  checkShoppingRoute=false;
-  onRouteClicked(routeClicked: string){
- 	 if(routeClicked==='recipe'){
- 	 	this.checkRecipeRoute=true;
- 	 	this.checkShoppingRoute=false;
- 	 }else{
- 	 	this.checkShoppingRoute=true;
-  		this.checkRecipeRoute=false;
- 	 }
- 	 
-  }
+  
 }
