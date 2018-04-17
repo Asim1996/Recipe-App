@@ -9,12 +9,19 @@
       <li routerLinkActive="active" class="nav-item">
         <a class="nav-link" [routerLink]="['/recipes']"  >Recipes</a>
       </li>
+
       <li routerLinkActive="active" class="nav-item">
       <a class="nav-link"  [routerLink]="['/shopping-list']">Shopping List</a>
       </li>
+      
       </ul>
       <ul class="navbar-nav ml-auto">
-      <li class="nav-item dropdown" >
+        <ng-template [ngIf]="!authService.isAuthenticated()">
+          <li routerLinkActive="active" class="nav-item "><a  class="nav-link" [routerLink]="['/signup']">Register</a></li>
+       <li routerLinkActive="active" class="nav-item "><a  class="nav-link" [routerLink]="['/signin']">Login</a></li>
+        </ng-template> 
+        <li class="nav-item"><a class="nav-link" style="cursor: pointer;"(click)="onLogout()" *ngIf="authService.isAuthenticated()" >Logout</a></li>
+      <li class="nav-item dropdown" *ngIf="authService.isAuthenticated()" >
         <a class="nav-link dropdown-toggle" style="cursor:pointer;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" appDropdown>
           Manage
         </a>
