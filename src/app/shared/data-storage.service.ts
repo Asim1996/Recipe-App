@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { RecipeService } from '../recipes/recipe.service'; 
 import { Recipe } from '../recipes/recipes.model';
 import { appConfig} from '../app.config';
@@ -9,19 +9,18 @@ import 'rxjs/Rx';
 export class DataStorageService{
 	firebaseUrl=appConfig.apiUrl;
 	
-	constructor(private http:Http,private recipeService:RecipeService,private authService:AuthService){}
+	constructor(private http:HttpClient,private recipeService:RecipeService,private authService:AuthService){}
 	storeRecipes(){
   const token=this.authService.getToken();
-  return this.http.put(this.firebaseUrl+'?auth='+token,this.recipeService.getRecipes());
+  return this.http.put(this.firebaseUrl,this.recipeService.getRecipes());
 	}
 	
 	
 	fetchRecipes(){
 		const token=this.authService.getToken();
-		this.http.get(this.firebaseUrl+'?auth='+token)
+		this.http.get<Recipe[]>(this.firebaseUrl)
 		.map(
-			(response:Response) => {
-			const recipes:Recipe[] =response.json();
+			(recipes) => {
 			for(let recipe of recipes){
 				if(!recipe['ingredients']){
 					console.log(recipe);
