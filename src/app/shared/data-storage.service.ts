@@ -11,13 +11,11 @@ export class DataStorageService{
 	
 	constructor(private http:HttpClient,private recipeService:RecipeService,private authService:AuthService){}
 	storeRecipes(){
-  const token=this.authService.getToken();
   return this.http.put(this.firebaseUrl,this.recipeService.getRecipes());
 	}
 	
 	
 	fetchRecipes(){
-		const token=this.authService.getToken();
 		this.http.get<Recipe[]>(this.firebaseUrl)
 		.map(
 			(recipes) => {
