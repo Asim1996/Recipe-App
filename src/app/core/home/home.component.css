@@ -38,9 +38,14 @@ h2{
       right: 0;
        }
     .composition__photo:hover {
-      outline: 0.5rem solid #55c57a;
+      outline: 0.5rem solid #717271;
       transform: scale(1.05) translateY(-0.5rem);
       box-shadow: 0 2.5rem 4rem rgaba(#000, 0.5);
       z-index: 20; }
   .composition:hover .composition__photo:not(:hover) {
     transform: scale(0.95); }
+@media only screen and (max-width: 600px) {
+    .composition {
+        display: none;
+    }
+}

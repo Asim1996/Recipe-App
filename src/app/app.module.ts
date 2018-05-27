@@ -22,6 +22,8 @@ import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
 import { AuthInterceptor } from './shared/auth.interceptor';
 import {reducers} from './store/app.reducers';
+import {EffectsModule} from '@ngrx/effects';
+import {AuthEffects} from './auth/store/auth.effect';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +36,7 @@ import {reducers} from './store/app.reducers';
     AuthModule,
     CoreModule,
     StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([AuthEffects]),
     AppRoutingModule
  ],
   providers: [ShoppingListService, RecipeService,DataStorageService, AuthService, AuthGuard,
