@@ -24,6 +24,9 @@ import { AuthInterceptor } from './shared/auth.interceptor';
 import {reducers} from './store/app.reducers';
 import {EffectsModule} from '@ngrx/effects';
 import {AuthEffects} from './auth/store/auth.effect';
+import {StoreRouterConnectingModule } from '@ngrx/router-store';
+import {StoreDevtoolsModule } from '@ngrx/store-devtools';
+import {environment } from '../environments/environment'
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +40,8 @@ import {AuthEffects} from './auth/store/auth.effect';
     CoreModule,
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([AuthEffects]),
+    StoreRouterConnectingModule,
+    !environment.production ? StoreDevtoolsModule.instrument():[],
     AppRoutingModule
  ],
   providers: [ShoppingListService, RecipeService,DataStorageService, AuthService, AuthGuard,
