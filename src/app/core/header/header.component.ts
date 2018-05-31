@@ -7,6 +7,7 @@ import { AuthService } from '../../auth/auth.service';
 import * as fromApp from '../../store/app.reducers';
 import * as fromAuth from  '../../auth/store/auth.reducers';
 import * as AuthActions from '../../auth/store/auth.actions'; 
+import * as RecipeAction from '../../recipes/store/recipe.actions';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -21,12 +22,13 @@ export class HeaderComponent implements OnInit {
 		this.authState =this.store.select('auth');
 	}
 	onSaveData(){
-		this.dataStorageService.storeRecipes().subscribe(
-			(res:Response) => console.log(res))
-
+		// this.dataStorageService.storeRecipes().subscribe(
+		// 	(res:Response) => console.log(res))
+		this.store.dispatch(new RecipeAction.StoreRecipes());
 	}
 	onFetchData(){
-		this.dataStorageService.fetchRecipes();
+		// this.dataStorageService.fetchRecipes();
+		this.store.dispatch(new RecipeAction.FetchRecipes())
 	}
 	onLogout(){
 		this.store.dispatch(new AuthActions.Logout());

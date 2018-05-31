@@ -4,6 +4,8 @@ export const SET_RECIPES='SET_RECIPES';
 export const ADD_RECIPES='ADD_RECIPES';
 export const UPDATE_RECIPES='UPDATE_RECIPES';
 export const DELETE_RECIPES='DELETE_RECIPES';
+export const STORE_RECIPES='STORE_RECIPES';
+export const FETCH_RECIPES='FETCH_RECIPES';
 
 export class SetRecipes implements Action {
 	readonly type=SET_RECIPES;
@@ -22,8 +24,17 @@ export class DeleteRecipe implements Action {
 	readonly type=DELETE_RECIPES;
 	constructor(public payload:number){}
 }
-// bundele of all action
+export class StoreRecipes implements Action {
+	readonly type=STORE_RECIPES;
+}
+export class FetchRecipes implements Action {
+	readonly type=FETCH_RECIPES;
+}
+
+// bundle of all action
 export type RecipesAction = SetRecipes|
 							AddRecipe|
 							UpdateRecipe|
-							DeleteRecipe;
+							DeleteRecipe|
+							StoreRecipes|
+							FetchRecipes;
