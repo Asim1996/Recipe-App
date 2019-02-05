@@ -11,21 +11,51 @@ export interface State {
 }
 const initialState:State ={
 	recipes : [
-		new Recipe('Tasty Schnitzel',
-			'just awesome',
-			'https://images.pexels.com/photos/691114/pexels-photo-691114.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb',
+		new Recipe('Kiwi Salad',
+			'Healthy and Nutritious',
+			'https://images.unsplash.com/photo-1543363136-3fdb62e11be5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
 			[
-				new Ingredient('Meat',1),
-				new Ingredient('French Fries',20)
+				new Ingredient('Kiwi',2),
+				new Ingredient('Corriander',1)
 			]),
-		new Recipe('Burger','Good',
-			'https://images.pexels.com/photos/691114/pexels-photo-691114.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb',
-			[
+		new Recipe('Pizza','Must Try',
+			'https://images.unsplash.com/photo-1506354666786-959d6d497f1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+		 	[
+			new Ingredient('Bread',1),
+			new Ingredient('Tomato',2),
+			new Ingredient('Jalapeno',2),
+			new Ingredient('Paneer',5),
+			new Ingredient('Cheese',2)
+			]),
+		new Recipe('Burger','The best you can have',
+			'https://images.unsplash.com/photo-1468071174046-657d9d351a40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=966&q=80',
+		 	[
 			new Ingredient('Bun',2),
-			new Ingredient('Tomato',3)
+			new Ingredient('Tomato',3),
+			new Ingredient('Spinach',3),
+			new Ingredient('Cheese slice',2)
 			
+			]),new Recipe('Waffle Pancake','Mouth-watering',
+			'https://images.unsplash.com/photo-1459789034005-ba29c5783491?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+		 	[
+			new Ingredient('Chocolate',2),
+			new Ingredient('Cashews',10),
+			new Ingredient('Ice cream',1),
 			])
-	
+			,new Recipe('Pasta','Healthy Breakfast',
+			'https://images.unsplash.com/photo-1453831362806-3d5577f014a4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+		 	[
+			new Ingredient('Pasta',2),
+			new Ingredient('Tomato',3),
+			new Ingredient('Onion',2),
+			new Ingredient('Lemon',3)
+			]),
+			new Recipe('Doughnut','Yummy',
+			'https://images.unsplash.com/photo-1472452049192-db15def0be25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+		 	[
+			new Ingredient('Cream',2),
+			new Ingredient('Sweets',3)
+			])
 	]
 } 
 

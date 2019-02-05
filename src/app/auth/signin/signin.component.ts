@@ -20,6 +20,8 @@ export class SigninComponent implements OnInit {
   	const email=form.value.email;
 	const password=form.value.password;
 	// this.authService.signinUser(email,password);
+
+  console.log(email,password);
   this.store.dispatch(new AuthActions.TrySignin({username:email,password:password}))
   }
 }
