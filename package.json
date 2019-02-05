@@ -6,8 +6,9 @@
     "ng": "ng",
     "start": "node server.js",
     "startang": "ng serve",
-    "build": "ng build --prod",
+    "build:browser": "ng build --prod",
     "build:ssr": "ng build --prod && ng build --prod --app 1 --output-hashing=none",
+    "build": "npm run build:browser && npm run build:server",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
