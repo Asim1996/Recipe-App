@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "npm run build && node server.js",
     "startang": "ng serve",
     "build:browser": "ng build --prod",
     "build:ssr": "ng build --prod && ng build --prod --app 1 --output-hashing=none",
